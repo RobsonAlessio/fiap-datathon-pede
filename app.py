@@ -135,11 +135,11 @@ with tab1:
     
     Projeto desenvolvido como parte do **Datathon - Fase 5 (Data Analytics)**.
     
-    - **[Seu Nome]**: [seu.email@example.com]
-    - **[Nome do Colega 2]**: [email2@example.com]
-    - **[Nome do Colega 3]**: [email3@example.com]
-    - **[Nome do Colega 4]**: [email4@example.com]
-    - **[Nome do Colega 5]**: [email5@example.com]
+    - **Juan Cordeiro**: juan-bloc@hotmail.com
+    - **Kaique Manoel Angelo de Paula Cardoso**: kaique.angello.01@gmail.com
+    - **Lucas Alexandre Nunes de Melo**: lucasnunes.work@gmail.com
+    - **Maiquel Roniele Machado de Oliveira**: maiquelroniele@gmail.com
+    - **Robson Alessio**: robson.alessio@hotmail.com
     """)
     
     st.markdown("---")
@@ -504,6 +504,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align: center'>
     <p>📚 Desenvolvido para a <b>Associação Passos Mágicos</b> | Datathon PEDE - Fase 5</p>
-    <p>FIAP Pós-Tech em Data Analytics | 2024</p>
+    <p>FIAP Pós-Tech em Data Analytics | 2026</p>
 </div>
 """, unsafe_allow_html=True)

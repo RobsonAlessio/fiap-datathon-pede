@@ -1,6 +1,6 @@
 # 🎤 Roteiro de Apresentação - Datathon PEDE
 ## Associação Passos Mágicos
-### Tempo Total: 5 minutos (1 minuto por pessoa)
+### Tempo Total: 5 minutos (1 minuto por pessoa) - 2026
 
 ---
 
@@ -253,4 +253,4 @@ Este projeto demonstra como **Data Analytics e Machine Learning** podem ser ferr
 ---
 
 **Desenvolvido com ❤️ para a Associação Passos Mágicos**
-**FIAP Pós-Tech em Data Analytics - Datathon Fase 5**
+**FIAP Pós-Tech em Data Analytics - Datathon Fase 5 - 2026**

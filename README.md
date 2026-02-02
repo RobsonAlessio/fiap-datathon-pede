@@ -8,6 +8,7 @@ A Associação Passos Mágicos atua há 32 anos oferecendo educação de qualida
 
 - **Analisar** o desenvolvimento educacional dos alunos através de múltiplos indicadores
 - **Identificar** padrões e insights sobre defasagem, desempenho e engajamento
+- **Período**: 2020-2026
 - **Prever** riscos de defasagem educacional antes que aconteçam
 - **Disponibilizar** uma ferramenta interativa para tomada de decisão
 
@@ -179,11 +180,11 @@ O modelo de Machine Learning foi desenvolvido para identificar alunos em risco d
 
 Projeto desenvolvido como parte do **Datathon - Fase 5 (Data Analytics)**.
 
-- **[Seu Nome]**: [seu.email@example.com]
-- **[Nome do Colega 2]**: [email2@example.com]
-- **[Nome do Colega 3]**: [email3@example.com]
-- **[Nome do Colega 4]**: [email4@example.com]
-- **[Nome do Colega 5]**: [email5@example.com]
+- **Juan Cordeiro**: juan-bloc@hotmail.com
+- **Kaique Manoel Angelo de Paula Cardoso**: kaique.angello.01@gmail.com
+- **Lucas Alexandre Nunes de Melo**: lucasnunes.work@gmail.com
+- **Maiquel Roniele Machado de Oliveira**: maiquelroniele@gmail.com
+- **Robson Alessio**: robson.alessio@hotmail.com
 
 ---
 

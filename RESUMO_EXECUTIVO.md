@@ -6,7 +6,7 @@
 ## 🎯 Visão Geral do Projeto
 
 **Organização**: Associação Passos Mágicos (32 anos transformando vidas)  
-**Dataset**: 860 alunos, 42 variáveis, período 2020-2024  
+**Dataset**: 860 alunos, 42 variáveis, período 2020-2026  
 **Indicadores**: IAN, IDA, IEG, IAA, IPS, IPV, INDE  
 **Objetivo**: Análise + Predição de Risco + Ferramenta Interativa
 
@@ -278,4 +278,4 @@ Este projeto demonstra o **poder dos dados** para gerar **impacto social real**.
 ---
 
 **Desenvolvido com ❤️ para a Associação Passos Mágicos**  
-**FIAP Pós-Tech em Data Analytics - Datathon Fase 5 - 2024**
+**FIAP Pós-Tech em Data Analytics - Datathon Fase 5 - 2026**

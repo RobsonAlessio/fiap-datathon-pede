@@ -249,7 +249,7 @@ cat RESUMO_EXECUTIVO.md
 **Projeto**: Datathon PEDE - Fase 5  
 **Instituição**: FIAP Pós-Tech em Data Analytics  
 **Organização Parceira**: Associação Passos Mágicos  
-**Ano**: 2024  
+**Ano**: 2026  
 
 **Tecnologias Principais**:
 - Python 3.8+
