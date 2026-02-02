@@ -1,5 +1,10 @@
 # 📚 Datathon PEDE - Associação Passos Mágicos
 
+## 🌐 Aplicação Online
+**Acesse a aplicação deployada**: https://fiap-datathon-pede-jklmr.streamlit.app/
+
+---
+
 Este projeto foi desenvolvido como parte do **Datathon - Fase 5** da Pós-Tech em Data Analytics da FIAP. O objetivo é criar uma solução completa de análise de dados e predição de risco educacional para a **Associação Passos Mágicos**, uma organização que transforma vidas de crianças e jovens através da educação.
 
 ## 🎯 Sobre o Projeto
