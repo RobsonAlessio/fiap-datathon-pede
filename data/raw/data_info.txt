@@ -1,0 +1,93 @@
+Dataset PEDE 2024 - Informações Básicas
+================================================================================
+
+Shape: (860, 42)
+
+Colunas:
+  - RA
+  - Fase
+  - Turma
+  - Nome
+  - Ano nasc
+  - Idade 22
+  - Gênero
+  - Ano ingresso
+  - Instituição de ensino
+  - Pedra 20
+  - Pedra 21
+  - Pedra 22
+  - INDE 22
+  - Cg
+  - Cf
+  - Ct
+  - Nº Av
+  - Avaliador1
+  - Rec Av1
+  - Avaliador2
+  - Rec Av2
+  - Avaliador3
+  - Rec Av3
+  - Avaliador4
+  - Rec Av4
+  - IAA
+  - IEG
+  - IPS
+  - Rec Psicologia
+  - IDA
+  - Matem
+  - Portug
+  - Inglês
+  - Indicado
+  - Atingiu PV
+  - IPV
+  - IAN
+  - Fase ideal
+  - Defas
+  - Destaque IEG
+  - Destaque IDA
+  - Destaque IPV
+
+Tipos de dados:
+RA                        object
+Fase                       int64
+Turma                     object
+Nome                      object
+Ano nasc                   int64
+Idade 22                   int64
+Gênero                    object
+Ano ingresso               int64
+Instituição de ensino     object
+Pedra 20                  object
+Pedra 21                  object
+Pedra 22                  object
+INDE 22                  float64
+Cg                         int64
+Cf                         int64
+Ct                         int64
+Nº Av                      int64
+Avaliador1                object
+Rec Av1                   object
+Avaliador2                object
+Rec Av2                   object
+Avaliador3                object
+Rec Av3                   object
+Avaliador4                object
+Rec Av4                   object
+IAA                      float64
+IEG                      float64
+IPS                      float64
+Rec Psicologia            object
+IDA                      float64
+Matem                    float64
+Portug                   float64
+Inglês                   float64
+Indicado                  object
+Atingiu PV                object
+IPV                      float64
+IAN                      float64
+Fase ideal                object
+Defas                      int64
+Destaque IEG              object
+Destaque IDA              object
+Destaque IPV              object
+dtype: object
