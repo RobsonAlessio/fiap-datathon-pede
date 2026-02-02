@@ -195,7 +195,7 @@ Projeto desenvolvido como parte do **Datathon - Fase 5 (Data Analytics)**.
 
 ## 🔗 Links Úteis
 
-- **Aplicação Deployada:** [Link do Streamlit Community Cloud]
+- **Aplicação Deployada:** https://fiap-datathon-pede-jklmr.streamlit.app/
 - **Apresentação:** [Link para apresentação PDF/PPT]
 - **Vídeo de Demonstração:** [Link para vídeo de 5 minutos]
 - **Associação Passos Mágicos:** [Site oficial](https://passosmagicos.org.br/)
