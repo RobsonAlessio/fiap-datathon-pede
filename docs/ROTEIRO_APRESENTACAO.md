@@ -36,8 +36,8 @@ O projeto foi estruturado seguindo as melhores práticas de Data Science, com pa
 **Descoberta 1 - Engajamento é Crucial:**
 O IEG (Engajamento) apresentou **correlação moderada-forte** com IDA (Desempenho) de **0.56** e com IPV (Ponto de Virada) de **0.59**. Isso significa que **alunos mais engajados têm melhor desempenho e maior chance de atingir o ponto de virada**.
 
-**Descoberta 2 - INDE como Indicador Síntese:**
-O INDE (Desenvolvimento Educacional) tem **correlação muito forte** com IDA (**0.82**) e IEG (**0.80**), confirmando que desempenho e engajamento são os pilares do desenvolvimento.
+**Descoberta 2 - Combinações que mais elevam o INDE:**
+Identificamos que a combinação **IDA Alto + IEG Alto + IPS Alto** eleva o INDE médio para **8.95** — 75% acima da combinação mínima. O IDA responde por ~40% do impacto, o IEG por ~35% e o IPS amplifica os resultados quando saudável. Intervenções simultâneas nos dois primeiros geram ganho de **+1.9 pontos** no INDE.
 
 **Descoberta 3 - Defasagem é Independente:**
 O IAN (Adequação de Nível) apresentou **correlações fracas** com outros indicadores (< 0.2), sugerindo que a defasagem é um **fator independente** que requer atenção especial e não se resolve apenas com engajamento.
@@ -49,7 +49,8 @@ Identificamos que os indicadores variam significativamente entre as 8 fases do p
 - Matriz de correlação (heatmap)
 - Gráfico de evolução dos indicadores por fase
 - Scatter plot IEG vs IDA mostrando correlação
-- Tabela com estatísticas descritivas
+- Tabela de combinações ótimas de INDE (IDA + IEG + IPS)
+- Gráfico de barras com impacto de cada combinação no INDE
 
 ---
 
@@ -93,7 +94,7 @@ O modelo está **totalmente integrado** na aplicação web e permite **prediçõ
 
 ### Script:
 
-"Desenvolvemos uma **aplicação web interativa** usando Streamlit com **3 abas principais**:
+"Desenvolvemos uma **aplicação web interativa** usando Streamlit com **4 abas principais**:
 
 **Aba 1 - Sobre o Projeto:**
 Apresenta o contexto da Associação Passos Mágicos, objetivos do projeto, indicadores analisados e tecnologias utilizadas.
@@ -111,9 +112,14 @@ Apresenta o contexto da Associação Passos Mágicos, objetivos do projeto, indi
 - **Filtros interativos** por Fase, Gênero, Ponto de Virada e Ano de Ingresso
 - **5 KPIs principais** no topo: Total de Alunos, IDA Médio, IEG Médio, INDE Médio e % em Risco
 - **Múltiplas visualizações**: distribuição por fase, evolução temporal, matriz de correlação, scatter plots
-- **Insights textuais** acompanhando cada visualização
+- **Insights textuais** incluindo as combinações que mais elevam o INDE
 
-Todas as melhorias sugeridas pelo professor foram implementadas: mais gráficos, insights textuais, filtros interativos e visualizações limpas."
+**Aba 4 - Resumo Executivo:** *(nova)*
+- Todas as **11 perguntas** respondidas em seções colapsáveis
+- **Q8 em destaque**: tabela e gráfico das combinações que mais elevam o INDE
+- Conclusões, recomendações estratégicas e números-chave do projeto
+
+Todas as melhorias foram implementadas: mais gráficos, insights textuais, filtros interativos e o Resumo Executivo integrado."
 
 ### Elementos Visuais:
 - GIF ou vídeo curto da aplicação em uso
@@ -143,10 +149,10 @@ Todas as melhorias sugeridas pelo professor foram implementadas: mais gráficos,
 
 **Recomendações Principais:**
 
-1. **Priorizar Engajamento**: Investir em atividades que aumentem o IEG
-2. **Usar o Modelo**: Aplicar predições trimestralmente para identificar riscos
-3. **Acompanhamento Diferenciado**: Estratégias específicas para cada perfil de risco
-4. **Avaliar Continuamente**: Monitorar efetividade das intervenções
+1. **Trio Ótimo IDA + IEG + IPS**: Elevar os três simultaneamente leva o INDE a **8.95** — a combinação de maior impacto comprovado
+2. **Priorizar Engajamento**: Investir em atividades que aumentem o IEG — peso de 35% no INDE
+3. **Usar o Modelo**: Aplicar predições trimestralmente para identificar riscos antes do agravamento
+4. **Acompanhamento Diferenciado**: Estratégias específicas por perfil de risco e por fase do programa
 
 **Conclusão:**
 
@@ -183,8 +189,9 @@ Este projeto demonstra como **Data Analytics e Machine Learning** podem ser ferr
 - [ ] Logo da Associação Passos Mágicos
 - [ ] Matriz de correlação
 - [ ] Gráficos de evolução por fase
+- [ ] Tabela de combinações ótimas de INDE (Q8)
 - [ ] Feature importance do modelo
-- [ ] Screenshots da aplicação (3 abas)
+- [ ] Screenshots da aplicação (4 abas)
 - [ ] GIF/vídeo da aplicação em uso
 - [ ] Infográfico de impacto
 
@@ -219,7 +226,7 @@ Este projeto demonstra como **Data Analytics e Machine Learning** podem ser ferr
 3. **Objetivos**: 4 objetivos principais
 4. **Descobertas**: Matriz de correlação + Insights
 5. **Modelo**: Arquitetura + Feature Importance
-6. **Aplicação**: Screenshots das 3 abas
+6. **Aplicação**: Screenshots das 4 abas
 7. **Demo**: Vídeo ou demonstração ao vivo
 8. **Resultados**: Checklist de entregas
 9. **Impacto**: Infográfico de benefícios

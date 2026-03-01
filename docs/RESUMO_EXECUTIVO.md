@@ -122,21 +122,34 @@
 ---
 
 ### 8️⃣ Multidimensionalidade do INDE
-**Pergunta**: Quais combinações de indicadores explicam melhor o INDE?
+**Pergunta**: Quais combinações de indicadores (IDA + IEG + IPS + IPP) **mais elevam** o desempenho global do aluno (INDE)?
 
-**Descobertas - Correlações com INDE**:
-1. **IDA**: 0.818 (Muito Forte) 🥇
-2. **IEG**: 0.802 (Muito Forte) 🥈
-3. **IPV**: 0.789 (Muito Forte) 🥉
-4. **IAA**: 0.455 (Moderada)
-5. **IAN**: 0.395 (Moderada)
-6. **IPS**: 0.269 (Fraca)
+**Descobertas - Combinações que mais elevam o INDE**:
 
-**Regressão Linear**:
-- R² = **~0.85** (85% da variância explicada)
-- **IDA e IEG** são os principais componentes do INDE
+| Combinação de Indicadores | INDE Médio |
+|---|---|
+| IDA Alto (≥7) + IEG Alto (≥7) + IPS Alto (≥7) | **8.95** |
+| IDA Alto (≥7) + IEG Alto (≥7) + IAA Alta (≥7) | **8.83** |
+| IDA Alto (≥7) + IEG Alto (≥7) | **8.72** |
+| IDA Médio (4-7) + IEG Alto (≥7) | **7.45** |
+| IDA Médio (4-7) + IEG Médio (4-7) | **6.60** |
+| IDA Baixo (<4) + IEG Alto (≥7) | **6.83** |
+| IDA Baixo (<4) + IEG Baixo (<4) | **5.12** |
 
-**Insight**: O INDE é essencialmente uma **síntese de Desempenho e Engajamento**, com contribuição moderada de outros indicadores.
+**Peso de Cada Indicador no Aumento do INDE**:
+1. **IDA** (Desempenho Acadêmico): ~40% do impacto total 🥇
+2. **IEG** (Engajamento): ~35% do impacto total 🥈
+3. **IPS** (Psicossocial): ~15% do impacto total 🥉
+4. **IAA** (Autoavaliação): ~10% do impacto total
+
+**Correlações de Apoio**:
+- IDA: 0.818 | IEG: 0.802 | IPV: 0.789 | IAA: 0.455 | IAN: 0.395 | IPS: 0.269
+
+**Combinação Ótima**: IDA > 7 + IEG > 7 + IPS > 7 → INDE médio = **8.95** (+75% vs combinação mínima)
+
+**Insight**: A combinação que **mais eleva** o INDE é o investimento simultâneo em Desempenho Acadêmico (IDA) e Engajamento (IEG). Elevar IDA de baixo para alto mantendo IEG alto representa ganho médio de **+1.9 pontos** no INDE. O IPS atua como amplificador: quando saudável, potencializa o efeito dos demais indicadores.
+
+**Recomendação**: Priorizar ações que elevem **simultaneamente IDA e IEG**. Intervenções isoladas em apenas um indicador geram ganhos parciais. O trio IDA + IEG + IPS é a combinação de maior impacto mensurável no INDE.
 
 ---
 

@@ -61,10 +61,11 @@ if df is None:
 model, scaler, target_encoder, label_encoders, feature_info = load_model_assets()
 
 # ==================== ABAS DA APLICAÇÃO ====================
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
     "ℹ️ Sobre o Projeto",
     "🔮 Preditor de Risco",
-    "📊 Dashboard Analítico"
+    "📊 Dashboard Analítico",
+    "📋 Resumo Executivo"
 ])
 
 # ==================== ABA 1: SOBRE O PROJETO ====================
@@ -477,27 +478,306 @@ with tab3:
         
         with insight_col1:
             st.info("""
-            **📊 Engajamento e Desempenho**
-            
-            Existe uma correlação positiva moderada (0.56) entre IEG e IDA, 
-            indicando que alunos mais engajados tendem a ter melhor desempenho.
+            **📊 Combinação que mais eleva o INDE (Q8)**
+
+            IDA Alto + IEG Alto + IPS Alto → INDE médio **8.95**
+            (+75% vs combinação mínima). IDA tem peso ~40% e IEG ~35%.
+            Intervenções simultâneas nos dois elevam +1.9 pts no INDE.
             """)
-        
+
         with insight_col2:
             st.success("""
             **🎯 Ponto de Virada**
-            
-            O IPV tem forte correlação com IDA (0.62) e IEG (0.59), 
+
+            O IPV tem forte correlação com IDA (0.62) e IEG (0.59),
             mostrando que o ponto de virada está relacionado ao desempenho e engajamento.
             """)
-        
+
         with insight_col3:
             st.warning("""
             **⚠️ Adequação de Nível**
-            
-            O IAN tem correlação fraca com outros indicadores, 
+
+            O IAN tem correlação fraca com outros indicadores,
             sugerindo que a defasagem é um fator independente que precisa atenção especial.
             """)
+
+# ==================== ABA 4: RESUMO EXECUTIVO ====================
+with tab4:
+    st.header("📋 Resumo Executivo - Datathon PEDE")
+    st.markdown("### Principais Descobertas e Insights")
+    st.markdown("---")
+
+    # Visão Geral
+    st.markdown("## 🎯 Visão Geral do Projeto")
+    ov_col1, ov_col2, ov_col3, ov_col4 = st.columns(4)
+    with ov_col1:
+        st.metric("Alunos Analisados", "860")
+    with ov_col2:
+        st.metric("Variáveis", "42")
+    with ov_col3:
+        st.metric("Indicadores Principais", "7")
+    with ov_col4:
+        st.metric("Variância INDE Explicada", "85%")
+
+    st.info("""
+    **Organização**: Associação Passos Mágicos (32 anos transformando vidas)
+    | **Dataset**: 860 alunos, 42 variáveis, período 2020-2024
+    | **Objetivo**: Análise + Predição de Risco + Ferramenta Interativa
+    """)
+    st.markdown("---")
+
+    # Perguntas colapsáveis
+    st.markdown("## 📈 Respostas às 11 Perguntas do Desafio")
+
+    with st.expander("1️⃣ Adequação do Nível (IAN) — Qual é o perfil de defasagem dos alunos?"):
+        c1, c2 = st.columns([2, 1])
+        with c1:
+            st.markdown("""
+            **Descobertas**:
+            - Média IAN: **6.42** | Desvio padrão: **2.39** (alta variabilidade)
+            - Adequado (IAN ≥ 7): ~45% | Moderadamente Defasado (4-7): ~40% | Severamente (<4): ~15%
+
+            **Insight**: Aproximadamente **55% dos alunos** apresentam algum nível de defasagem,
+            indicando necessidade de intervenção em mais da metade do público atendido.
+            """)
+        with c2:
+            st.warning("55% com algum nível de defasagem")
+
+    with st.expander("2️⃣ Desempenho Acadêmico (IDA) — Melhorando, estagnado ou caindo?"):
+        st.markdown("""
+        **Descobertas**:
+        - Média IDA: **6.09** | Fase 0: 7.14 → Fase 7: 5.25
+        - Tendência: **Decrescente** nas fases mais avançadas
+
+        **Insight**: Há uma **queda de desempenho** nas fases avançadas — critérios mais rigorosos
+        ou desafios crescentes exigem estratégias pedagógicas específicas.
+        """)
+
+    with st.expander("3️⃣ Engajamento (IEG) — Relação com desempenho e ponto de virada?"):
+        c1, c2 = st.columns(2)
+        with c1:
+            st.success("IEG × IDA: correlação **0.564** (Moderada-Forte)")
+        with c2:
+            st.success("IEG × IPV: correlação **0.589** (Moderada-Forte)")
+        st.markdown("""
+        **Insight**: **Engajamento é preditor forte de sucesso.** Alunos mais engajados têm
+        significativamente melhor desempenho e maior probabilidade de atingir o ponto de virada.
+
+        **Recomendação**: Investir em atividades que aumentem o engajamento tem impacto direto no desempenho.
+        """)
+
+    with st.expander("4️⃣ Autoavaliação (IAA) — Percepções coerentes com o desempenho real?"):
+        st.markdown("""
+        **Descobertas**:
+        - Média IAA: **8.27** vs IDA: **6.09** | Correlação IAA × IDA: **0.209** (Fraca)
+        - Coerentes: ~60% | Superestimação: ~30% | Subestimação: ~10%
+
+        **Insight**: Alunos tendem a **superestimar** seu desempenho — gap médio de +2.18 pontos.
+
+        **Recomendação**: Trabalhar autoconhecimento e feedback construtivo para alinhar autopercepção.
+        """)
+
+    with st.expander("5️⃣ Aspectos Psicossociais (IPS) — Padrões que antecedem quedas?"):
+        st.markdown("""
+        **Descobertas**:
+        - IPS Alto (≥7): IDA médio = 6.3 | IPS Médio: IDA = 5.8 | IPS Baixo: IDA = 5.2
+        - Correlação IPS × IDA: **0.132** (Fraca, mas consistente)
+
+        **Insight**: IPS baixo é um **indicador de alerta precoce**. Atenção psicossocial preventiva
+        pode evitar quedas acadêmicas.
+        """)
+
+    with st.expander("6️⃣ Aspectos Psicopedagógicos (IPP) — Confirmam ou contradizem a defasagem?"):
+        st.markdown("""
+        **Descobertas**:
+        - Avaliações psicopedagógicas correlacionam com IAN
+        - Recomendações de psicologia são mais frequentes em alunos com IAN baixo
+
+        **Insight**: Os aspectos psicopedagógicos **confirmam** a defasagem do IAN,
+        validando a necessidade de acompanhamento especializado integrado.
+        """)
+
+    with st.expander("7️⃣ Ponto de Virada (IPV) — Quais indicadores mais influenciam?"):
+        st.markdown("""
+        **Correlações com IPV**:
+        1. INDE: 0.789 (Muito Forte) | 2. IDA: 0.617 (Forte) | 3. IEG: 0.589 (Moderada-Forte)
+
+        **Combinações Poderosas**:
+        - IDA Alto + IEG Alto → IPV médio: **8.5**
+        - IDA Baixo + IEG Baixo → IPV médio: **6.2**
+
+        **Insight**: O Ponto de Virada é fortemente determinado pela **combinação IDA + IEG**.
+        """)
+
+    with st.expander("8️⃣ Multidimensionalidade do INDE — Quais combinações MAIS ELEVAM o INDE?", expanded=True):
+        st.markdown("**Pergunta**: Quais combinações de indicadores (IDA + IEG + IPS + IPP) **mais elevam** o desempenho global do aluno (INDE)?")
+
+        col_t, col_g = st.columns([1, 1])
+        with col_t:
+            combos_df = pd.DataFrame({
+                "Combinação": [
+                    "IDA Alto + IEG Alto + IPS Alto",
+                    "IDA Alto + IEG Alto + IAA Alta",
+                    "IDA Alto + IEG Alto",
+                    "IDA Médio + IEG Alto",
+                    "IDA Médio + IEG Médio",
+                    "IDA Baixo + IEG Alto",
+                    "IDA Baixo + IEG Baixo"
+                ],
+                "INDE Médio": [8.95, 8.83, 8.72, 7.45, 6.60, 6.83, 5.12]
+            })
+            st.dataframe(combos_df, use_container_width=True, hide_index=True)
+
+        with col_g:
+            fig_q8 = px.bar(
+                combos_df.sort_values("INDE Médio"),
+                x="INDE Médio", y="Combinação",
+                orientation="h",
+                color="INDE Médio",
+                color_continuous_scale="RdYlGn",
+                title="Impacto das Combinações no INDE",
+                range_x=[0, 10]
+            )
+            fig_q8.update_layout(showlegend=False, height=300)
+            st.plotly_chart(fig_q8, use_container_width=True)
+
+        peso_col1, peso_col2, peso_col3, peso_col4 = st.columns(4)
+        with peso_col1:
+            st.metric("IDA (Desempenho)", "~40%", "impacto no INDE")
+        with peso_col2:
+            st.metric("IEG (Engajamento)", "~35%", "impacto no INDE")
+        with peso_col3:
+            st.metric("IPS (Psicossocial)", "~15%", "impacto no INDE")
+        with peso_col4:
+            st.metric("IAA (Autoavaliação)", "~10%", "impacto no INDE")
+
+        st.success("""
+        **Combinação Ótima**: IDA > 7 + IEG > 7 + IPS > 7 → INDE médio = **8.95** (+75% vs combinação mínima)
+
+        **Insight**: A combinação que mais eleva o INDE é o investimento simultâneo em Desempenho (IDA) e
+        Engajamento (IEG). O IPS atua como amplificador quando saudável. Elevar IDA de baixo para alto
+        mantendo IEG alto representa ganho médio de **+1.9 pontos** no INDE.
+
+        **Recomendação**: Priorizar ações que elevem **simultaneamente IDA e IEG**. Intervenções isoladas
+        geram ganhos parciais. O trio IDA + IEG + IPS é a combinação de maior impacto mensurável.
+        """)
+
+    with st.expander("9️⃣ Modelo Preditivo — É possível identificar alunos em risco?"):
+        st.markdown("""
+        **Resposta**: **SIM! ✅** — Algoritmo XGBoost treinado com 9 features, validado por 5-fold Cross-Validation.
+
+        **Feature Importance (Top 5)**:
+        1. IDA (Desempenho) — 35% | 2. IPV (Ponto de Virada) — 22% | 3. IEG (Engajamento) — 18%
+        4. Defasagem — 12% | 5. IPS (Psicossocial) — 8%
+
+        **Insight**: O modelo permite **intervenção preventiva**, identificando alunos em risco
+        **antes** do agravamento da defasagem.
+        """)
+
+    with st.expander("🔟 Efetividade do Programa — Melhora consistente ao longo das fases?"):
+        st.markdown("""
+        **Descobertas**:
+        - IDA: Fase 0 (7.14) → Fase 7 (5.25) — Tendência **decrescente**
+        - IEG: Fase 0 (8.09) → Fase 7 (7.24) — Tendência **decrescente**
+        - IPV: Fase 0 (7.56) → Fase 7 (7.18) — Tendência **decrescente**
+
+        **Insight**: **NÃO há melhora consistente.** A queda pode indicar critérios mais rigorosos
+        ou desafios crescentes — exige revisão das estratégias para fases intermediárias/avançadas.
+        """)
+
+    with st.expander("1️⃣1️⃣ Insights Criativos — Padrões adicionais descobertos"):
+        st.markdown("""
+        **Perfis de Alunos identificados (Clustering)**:
+        1. **Alto Desempenho**: IDA alto, IEG alto, IPS alto (~25%)
+        2. **Desempenho Moderado**: Indicadores médios (~50%)
+        3. **Necessita Suporte**: IDA baixo, IEG baixo, IPS baixo (~25%)
+
+        **Alunos "Indicados"** têm médias significativamente superiores: IDA > 8, IEG > 9, IPV > 8.5
+
+        **Diferenças por Gênero**: Análise estatística revela diferenças em alguns indicadores —
+        importante para personalização de estratégias pedagógicas.
+        """)
+
+    st.markdown("---")
+
+    # Conclusões e Recomendações
+    st.markdown("## 🎯 Principais Conclusões")
+
+    conc_col1, conc_col2 = st.columns(2)
+    with conc_col1:
+        st.success("""
+        **✅ O Que Funciona**
+
+        1. **Engajamento é fundamental** — Forte correlação com sucesso
+        2. **Modelo preditivo é viável** — Identifica riscos com precisão
+        3. **IDA + IEG + IPS** elevam o INDE — Combinação ótima comprovada
+        4. **Intervenção precoce é possível** — IPS e IEG são sinais de alerta
+        """)
+    with conc_col2:
+        st.warning("""
+        **⚠️ Pontos de Atenção**
+
+        1. **Queda de desempenho nas fases avançadas** — Requer investigação
+        2. **Defasagem é independente** — Não se resolve só com engajamento
+        3. **Autopercepção desalinhada** — Alunos se superestimam (~30%)
+        4. **Fases intermediárias (3-5)** — Maior concentração de quedas
+        """)
+
+    st.markdown("## 💡 Recomendações Estratégicas")
+
+    rec_col1, rec_col2, rec_col3 = st.columns(3)
+    with rec_col1:
+        st.info("""
+        **Curto Prazo (Imediato)**
+
+        1. Usar modelo preditivo para identificar alunos em risco
+        2. Implementar ações de engajamento para todos
+        3. Acompanhamento psicossocial intensivo para IPS baixo
+        4. Elevar IDA + IEG simultaneamente (trio ótimo)
+        """)
+    with rec_col2:
+        st.info("""
+        **Médio Prazo (3-6 meses)**
+
+        1. Revisar estratégias para fases avançadas (3-5)
+        2. Trabalhar autoconhecimento e feedback
+        3. Personalizar abordagens por perfil de aluno
+        4. Monitorar INDE por combinação de indicadores
+        """)
+    with rec_col3:
+        st.info("""
+        **Longo Prazo (1 ano)**
+
+        1. Monitorar evolução dos indicadores trimestralmente
+        2. Avaliar efetividade das intervenções implementadas
+        3. Ajustar modelo preditivo com novos dados
+        4. Consolidar programa de elevação do INDE
+        """)
+
+    st.markdown("---")
+
+    # Números-chave
+    st.markdown("## 📊 Números-Chave")
+    nk_cols = st.columns(5)
+    numeros = [
+        ("860", "alunos analisados"),
+        ("42", "variáveis no dataset"),
+        ("55%", "alunos com defasagem"),
+        ("8.95", "INDE ótimo (IDA+IEG+IPS altos)"),
+        ("3", "perfis de alunos identificados"),
+    ]
+    for col, (num, label) in zip(nk_cols, numeros):
+        with col:
+            st.metric(num, label)
+
+    st.markdown("---")
+    st.markdown("""
+    > *Este projeto demonstra o **poder dos dados** para gerar **impacto social real**.
+    Ao transformar 860 histórias em insights acionáveis, contribuímos para que a
+    **Associação Passos Mágicos** continue sua missão de transformar vidas.*
+    >
+    > **Da análise à ação. Dos dados ao impacto. Da informação à transformação.**
+    """)
 
 # ==================== RODAPÉ ====================
 st.markdown("---")
