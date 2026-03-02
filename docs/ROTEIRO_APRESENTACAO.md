@@ -42,8 +42,8 @@ Identificamos que a combinação **IDA Alto + IEG Alto + IPS Alto** eleva o INDE
 **Descoberta 3 - Defasagem é Independente:**
 O IAN (Adequação de Nível) apresentou **correlações fracas** com outros indicadores (< 0.2), sugerindo que a defasagem é um **fator independente** que requer atenção especial e não se resolve apenas com engajamento.
 
-**Descoberta 4 - Evolução por Fases:**
-Identificamos que os indicadores variam significativamente entre as 8 fases do programa, com padrões distintos de evolução que permitem intervenções direcionadas."
+**Descoberta 4 - Efetividade por Fases:**
+Os indicadores caem progressivamente ao longo das fases — **Quartzo** (IDA 7.14) → **Ágata** (6.45) → **Ametista** (5.80) → **Topázio** (5.25). O programa enfrenta queda crescente de desempenho nas fases intermediárias e avançadas, exigindo estratégias específicas por fase."
 
 ### Elementos Visuais:
 - Matriz de correlação (heatmap)
@@ -80,7 +80,7 @@ Identificamos que os indicadores variam significativamente entre as 8 fases do p
 4. **Defasagem** (anos de atraso)
 5. **IPS** (Psicossocial)
 
-O modelo está **totalmente integrado** na aplicação web e permite **predições em tempo real**."
+O modelo está **totalmente integrado** na aplicação e retorna a **probabilidade individual** de o aluno entrar em risco de defasagem — exatamente o que o desafio pede: predição antes da queda, não após."
 
 ### Elementos Visuais:
 - Diagrama do pipeline de ML (dados → features → modelo → predição)
@@ -123,8 +123,8 @@ Todas as melhorias foram implementadas: mais gráficos, insights textuais, filtr
 
 ### Elementos Visuais:
 - GIF ou vídeo curto da aplicação em uso
-- Screenshots das 3 abas
-- Demonstração ao vivo do preditor (se possível)
+- Screenshots das 4 abas
+- Demonstração ao vivo do preditor com probabilidade de risco
 - Dashboard com filtros aplicados
 
 ---
@@ -135,17 +135,17 @@ Todas as melhorias foram implementadas: mais gráficos, insights textuais, filtr
 
 "**Resultados Alcançados:**
 
-✅ **Análise Completa**: Respondemos às 11 perguntas do desafio com análises estatísticas robustas
-✅ **Modelo Preditivo**: XGBoost com capacidade de identificar alunos em risco **antes** do agravamento
-✅ **Aplicação Funcional**: Sistema web completo, testado e pronto para uso
-✅ **Insights Acionáveis**: Descobertas que podem orientar decisões pedagógicas
+✅ **Análise Completa**: 11 perguntas respondidas, incluindo Q8 atualizada com combinações que mais elevam o INDE
+✅ **Modelo Preditivo**: XGBoost com **probabilidade de risco de defasagem** por aluno, antes do agravamento
+✅ **Aplicação no Streamlit**: 4 abas funcionais com deploy no **Community Cloud**
+✅ **Insights Acionáveis**: Combinação ótima IDA+IEG+IPS eleva INDE a 8.95 — guia decisões pedagógicas
 
 **Impacto Esperado:**
 
-🎯 **Intervenção Precoce**: Identificar alunos em risco permite ação preventiva
-📊 **Decisões Baseadas em Dados**: Dashboard fornece visão clara para gestores
-💡 **Personalização**: Recomendações adaptadas ao nível de risco de cada aluno
-📈 **Monitoramento Contínuo**: Acompanhar evolução dos indicadores ao longo das fases
+🎯 **Intervenção Precoce**: Probabilidade de risco individual — agir antes da queda de desempenho
+📊 **Decisões Baseadas em Dados**: Combinações ótimas comprovadas para elevar o INDE
+💡 **Por Fase**: Estratégias diferenciadas para Quartzo, Ágata, Ametista e Topázio
+📈 **Ferramenta Permanente**: Streamlit disponível no Community Cloud para uso contínuo da Passos Mágicos
 
 **Recomendações Principais:**
 

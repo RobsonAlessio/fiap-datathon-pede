@@ -517,11 +517,11 @@ with tab4:
     with ov_col3:
         st.metric("Indicadores Principais", "7")
     with ov_col4:
-        st.metric("Variância INDE Explicada", "85%")
+        st.metric("INDE Ótimo (IDA+IEG+IPS altos)", "8.95")
 
     st.info("""
     **Organização**: Associação Passos Mágicos (32 anos transformando vidas)
-    | **Dataset**: 860 alunos, 42 variáveis, período 2020-2024
+    | **Dataset**: 860 alunos, 42 variáveis, período 2022-2024
     | **Objetivo**: Análise + Predição de Risco + Ferramenta Interativa
     """)
     st.markdown("---")
@@ -529,7 +529,7 @@ with tab4:
     # Perguntas colapsáveis
     st.markdown("## 📈 Respostas às 11 Perguntas do Desafio")
 
-    with st.expander("1️⃣ Adequação do Nível (IAN) — Qual é o perfil de defasagem dos alunos?"):
+    with st.expander("1️⃣ Adequação do Nível (IAN) — Qual é o perfil de defasagem dos alunos (IAN) e como evolui ao longo do ano?"):
         c1, c2 = st.columns([2, 1])
         with c1:
             st.markdown("""
@@ -566,25 +566,35 @@ with tab4:
         **Recomendação**: Investir em atividades que aumentem o engajamento tem impacto direto no desempenho.
         """)
 
-    with st.expander("4️⃣ Autoavaliação (IAA) — Percepções coerentes com o desempenho real?"):
+    with st.expander("4️⃣ Autoavaliação (IAA) — Percepções coerentes com desempenho real (IDA) e engajamento (IEG)?"):
         st.markdown("""
         **Descobertas**:
-        - Média IAA: **8.27** vs IDA: **6.09** | Correlação IAA × IDA: **0.209** (Fraca)
+        - Média IAA: **8.27** vs IDA: **6.09** e IEG: **7.89**
+        - Correlação IAA × IDA: **0.209** (Fraca) | Correlação IAA × IEG: **0.183** (Muito Fraca)
+        - Alunos superestimam tanto o desempenho quanto o próprio engajamento
         - Coerentes: ~60% | Superestimação: ~30% | Subestimação: ~10%
 
-        **Insight**: Alunos tendem a **superestimar** seu desempenho — gap médio de +2.18 pontos.
+        **Insight**: Desconexão entre autopercepção e realidade — **em ambas as dimensões**. Alunos pouco
+        engajados tendem a não perceber o próprio desengajamento.
 
-        **Recomendação**: Trabalhar autoconhecimento e feedback construtivo para alinhar autopercepção.
+        **Recomendação**: Trabalhar autoconhecimento e feedback construtivo para alinhar autopercepção
+        com a realidade acadêmica e comportamental.
         """)
 
-    with st.expander("5️⃣ Aspectos Psicossociais (IPS) — Padrões que antecedem quedas?"):
+    with st.expander("5️⃣ Aspectos Psicossociais (IPS) — Padrões que antecedem quedas de desempenho ou de engajamento?"):
         st.markdown("""
         **Descobertas**:
-        - IPS Alto (≥7): IDA médio = 6.3 | IPS Médio: IDA = 5.8 | IPS Baixo: IDA = 5.2
-        - Correlação IPS × IDA: **0.132** (Fraca, mas consistente)
+        - Correlação IPS × IDA: **0.132** (Fraca) | Correlação IPS × IEG: **0.093** (Muito Fraca)
 
-        **Insight**: IPS baixo é um **indicador de alerta precoce**. Atenção psicossocial preventiva
-        pode evitar quedas acadêmicas.
+        | Nível IPS | IDA médio | IEG médio |
+        |---|---|---|
+        | Alto (≥7) | 6.3 | 8.1 |
+        | Médio (4-7) | 5.8 | 7.7 |
+        | Baixo (<4) | 5.2 | 7.3 |
+
+        **Insight**: Alunos com IPS baixo apresentam **pior desempenho e menor engajamento**. O padrão é
+        consistente nas duas dimensões — o IPS é um **indicador de alerta precoce** tanto para quedas
+        acadêmicas quanto comportamentais.
         """)
 
     with st.expander("6️⃣ Aspectos Psicopedagógicos (IPP) — Confirmam ou contradizem a defasagem?"):
@@ -597,16 +607,29 @@ with tab4:
         validando a necessidade de acompanhamento especializado integrado.
         """)
 
-    with st.expander("7️⃣ Ponto de Virada (IPV) — Quais indicadores mais influenciam?"):
+    with st.expander("7️⃣ Ponto de Virada (IPV) — Quais comportamentos acadêmicos, emocionais ou de engajamento mais influenciam ao longo do tempo?"):
         st.markdown("""
-        **Correlações com IPV**:
-        1. INDE: 0.789 (Muito Forte) | 2. IDA: 0.617 (Forte) | 3. IEG: 0.589 (Moderada-Forte)
+        **Correlações com IPV por categoria de comportamento**:
 
-        **Combinações Poderosas**:
+        | Categoria | Indicador | Correlação com IPV |
+        |---|---|---|
+        | Acadêmico | IDA (Desempenho) | **0.617** (Forte) |
+        | Engajamento | IEG (Engajamento) | **0.589** (Moderada-Forte) |
+        | Autopercepção | IAA (Autoavaliação) | **0.256** (Fraca) |
+        | Emocional/Psicossocial | IPS (Psicossocial) | **0.208** (Fraca) |
+
+        **Evolução temporal por fase**:
+        - **Quartzo**: IPV mais elevado, fortemente ligado ao desempenho acadêmico
+        - **Ágata/Ametista**: engajamento (IEG) ganha peso crescente
+        - **Topázio**: IPV estabiliza, determinado pela combinação IDA + IEG
+
+        **Combinações**:
         - IDA Alto + IEG Alto → IPV médio: **8.5**
         - IDA Baixo + IEG Baixo → IPV médio: **6.2**
 
-        **Insight**: O Ponto de Virada é fortemente determinado pela **combinação IDA + IEG**.
+        **Insight**: Comportamentos **acadêmicos (IDA)** têm maior impacto individual, mas o
+        **engajamento (IEG)** é o diferencial ao longo do tempo. O IPS emocional, quando comprometido,
+        limita o potencial de atingir o ponto de virada mesmo com bom desempenho.
         """)
 
     with st.expander("8️⃣ Multidimensionalidade do INDE — Quais combinações MAIS ELEVAM o INDE?", expanded=True):
@@ -662,27 +685,42 @@ with tab4:
         geram ganhos parciais. O trio IDA + IEG + IPS é a combinação de maior impacto mensurável.
         """)
 
-    with st.expander("9️⃣ Modelo Preditivo — É possível identificar alunos em risco?"):
+    with st.expander("9️⃣ Previsão de Risco com ML — Quais padrões identificam alunos em risco antes da queda?"):
         st.markdown("""
-        **Resposta**: **SIM! ✅** — Algoritmo XGBoost treinado com 9 features, validado por 5-fold Cross-Validation.
+        **Pergunta**: Quais padrões nos indicadores permitem identificar alunos em risco antes de queda
+        no desempenho ou aumento da defasagem? O modelo mostra a **probabilidade** do aluno entrar em risco.
 
-        **Feature Importance (Top 5)**:
-        1. IDA (Desempenho) — 35% | 2. IPV (Ponto de Virada) — 22% | 3. IEG (Engajamento) — 18%
-        4. Defasagem — 12% | 5. IPS (Psicossocial) — 8%
+        **Modelo**: XGBoost | 9 features | Split 80/20 + 5-fold Cross-Validation
+        **Saída**: Probabilidade (0–100%) de risco de defasagem com 3 classes (Alto / Médio / Baixo)
 
-        **Insight**: O modelo permite **intervenção preventiva**, identificando alunos em risco
-        **antes** do agravamento da defasagem.
+        **Padrões identificados (Feature Importance)**:
+        1. IDA (Desempenho) — **35%** → queda abaixo de 5 é sinal crítico
+        2. IPV (Ponto de Virada) — **22%** → IPV baixo precede o risco
+        3. IEG (Engajamento) — **18%** → desengajamento antecede a queda
+        4. Defasagem — **12%** → defasagem acumulada eleva o risco
+        5. IPS (Psicossocial) — **8%** → alerta precoce emocional
+
+        **Insight**: O modelo identifica alunos em risco **antes** da queda, exibindo a **probabilidade
+        individual** de cada cenário — permitindo intervenção preventiva, não remediativa.
         """)
 
-    with st.expander("🔟 Efetividade do Programa — Melhora consistente ao longo das fases?"):
+    with st.expander("🔟 Efetividade do Programa — Melhora consistente nas fases Quartzo, Ágata, Ametista e Topázio?"):
         st.markdown("""
-        **Descobertas**:
-        - IDA: Fase 0 (7.14) → Fase 7 (5.25) — Tendência **decrescente**
-        - IEG: Fase 0 (8.09) → Fase 7 (7.24) — Tendência **decrescente**
-        - IPV: Fase 0 (7.56) → Fase 7 (7.18) — Tendência **decrescente**
+        **Pergunta**: Os indicadores mostram melhora consistente ao longo do ciclo nas diferentes
+        fases (Quartzo, Ágata, Ametista e Topázio), confirmando o impacto real do programa?
 
-        **Insight**: **NÃO há melhora consistente.** A queda pode indicar critérios mais rigorosos
-        ou desafios crescentes — exige revisão das estratégias para fases intermediárias/avançadas.
+        | Fase | Nível | IDA | IEG | IPV |
+        |---|---|---|---|---|
+        | **Quartzo** (0-1) | Inicial | 7.14 | 8.09 | 7.56 |
+        | **Ágata** (2-3) | Intermediária 1 | 6.45 | 7.95 | 7.40 |
+        | **Ametista** (4-5) | Intermediária 2 | 5.80 | 7.58 | 7.28 |
+        | **Topázio** (6-7) | Avançada | 5.25 | 7.24 | 7.18 |
+
+        **Tendências**: IDA −1.89 pts | IEG −0.85 pts | IPV −0.38 pts (Quartzo → Topázio)
+
+        **Insight**: **NÃO há melhora consistente.** A queda é progressiva, com maior intensidade nas
+        transições Quartzo→Ágata e Ágata→Ametista. Pode indicar critérios mais rigorosos ou desafios
+        crescentes — exige intervenções específicas por fase.
         """)
 
     with st.expander("1️⃣1️⃣ Insights Criativos — Padrões adicionais descobertos"):
@@ -739,8 +777,8 @@ with tab4:
         st.info("""
         **Médio Prazo (3-6 meses)**
 
-        1. Revisar estratégias para fases avançadas (3-5)
-        2. Trabalhar autoconhecimento e feedback
+        1. Revisar estratégias para Ágata e Ametista (maior queda)
+        2. Trabalhar autoconhecimento e feedback (IAA vs IDA/IEG)
         3. Personalizar abordagens por perfil de aluno
         4. Monitorar INDE por combinação de indicadores
         """)

@@ -6,7 +6,7 @@
 ## 🎯 Visão Geral do Projeto
 
 **Organização**: Associação Passos Mágicos (32 anos transformando vidas)  
-**Dataset**: 860 alunos, 42 variáveis, período 2020-2026  
+**Dataset**: 860 alunos, 42 variáveis, período 2022-2024
 **Indicadores**: IAN, IDA, IEG, IAA, IPS, IPV, INDE  
 **Objetivo**: Análise + Predição de Risco + Ferramenta Interativa
 
@@ -15,7 +15,7 @@
 ## 📈 Respostas às 11 Perguntas do Desafio
 
 ### 1️⃣ Adequação do Nível (IAN)
-**Pergunta**: Qual é o perfil geral de defasagem dos alunos e como ele evolui?
+**Pergunta**: Qual é o perfil geral de defasagem dos alunos (IAN) e como ele evolui ao longo do ano?
 
 **Descobertas**:
 - Média IAN: **6.42** (escala 0-10)
@@ -30,7 +30,7 @@
 ---
 
 ### 2️⃣ Desempenho Acadêmico (IDA)
-**Pergunta**: O desempenho está melhorando, estagnado ou caindo?
+**Pergunta**: O desempenho acadêmico médio (IDA) está melhorando, estagnado ou caindo ao longo das fases e anos?
 
 **Descobertas**:
 - Média IDA: **6.09** (escala 0-10)
@@ -56,38 +56,39 @@
 ---
 
 ### 4️⃣ Autoavaliação (IAA)
-**Pergunta**: As percepções dos alunos são coerentes com o desempenho real?
+**Pergunta**: As percepções dos alunos sobre si mesmos (IAA) são coerentes com seu desempenho real (IDA) e engajamento (IEG)?
 
 **Descobertas**:
-- Média IAA: **8.27** (maior que IDA: 6.09)
+- Média IAA: **8.27** (maior que IDA: 6.09 e IEG: 7.89)
 - Correlação IAA x IDA: **0.209** (Fraca)
-- **Discrepância**: Alunos tendem a se **superestimar**
+- Correlação IAA x IEG: **0.183** (Muito Fraca)
+- **Discrepância**: Alunos tendem a se **superestimar** tanto no desempenho quanto no engajamento
 
-**Categorização**:
+**Categorização (em relação ao IDA)**:
 - Coerentes (|IAA-IDA| < 1.5): ~60%
 - Superestimação (IAA > IDA + 1.5): ~30%
 - Subestimação (IAA < IDA - 1.5): ~10%
 
-**Insight**: Há uma **desconexão entre autopercepção e desempenho real**. Alunos tendem a se avaliar melhor do que seu desempenho objetivo indica.
+**Insight**: Há uma **desconexão entre autopercepção e realidade** — tanto no desempenho quanto no engajamento. A baixa correlação com IEG sugere que alunos pouco engajados tendem a não perceber seu próprio baixo engajamento.
 
-**Recomendação**: Trabalhar autoconhecimento e feedback construtivo para alinhar autopercepção com realidade.
+**Recomendação**: Trabalhar autoconhecimento e feedback construtivo para alinhar autopercepção com a realidade acadêmica e comportamental.
 
 ---
 
 ### 5️⃣ Aspectos Psicossociais (IPS)
-**Pergunta**: Há padrões psicossociais que antecedem quedas de desempenho?
+**Pergunta**: Há padrões psicossociais (IPS) que antecedem quedas de desempenho acadêmico ou de engajamento?
 
 **Descobertas**:
 - Média IPS: **6.91**
-- Correlação IPS x IDA: **0.132** (Fraca)
-- Correlação IPS x IEG: **0.093** (Muito Fraca)
+- Correlação IPS x IDA: **0.132** (Fraca) — impacto no desempenho
+- Correlação IPS x IEG: **0.093** (Muito Fraca) — impacto no engajamento
 
 **Análise por Categoria**:
-- IPS Alto (≥7): IDA médio = 6.3
-- IPS Médio (4-7): IDA médio = 5.8
-- IPS Baixo (<4): IDA médio = 5.2
+- IPS Alto (≥7): IDA médio = 6.3 | IEG médio = 8.1
+- IPS Médio (4-7): IDA médio = 5.8 | IEG médio = 7.7
+- IPS Baixo (<4): IDA médio = 5.2 | IEG médio = 7.3
 
-**Insight**: Embora a correlação seja fraca, alunos com **IPS baixo tendem a ter pior desempenho**. O IPS pode ser um **indicador de alerta precoce**.
+**Insight**: Alunos com **IPS baixo apresentam pior desempenho e menor engajamento**. Embora as correlações sejam fracas, o padrão é consistente: o IPS funciona como **indicador de alerta precoce** para quedas tanto acadêmicas quanto comportamentais.
 
 ---
 
@@ -104,20 +105,27 @@
 ---
 
 ### 7️⃣ Ponto de Virada (IPV)
-**Pergunta**: Quais comportamentos/indicadores mais influenciam o IPV?
+**Pergunta**: Quais comportamentos — acadêmicos, emocionais ou de engajamento — mais influenciam o IPV ao longo do tempo?
 
-**Descobertas - Correlações com IPV**:
-1. **IDA**: 0.617 (Forte) 🥇
-2. **IEG**: 0.589 (Moderada-Forte) 🥈
-3. **INDE**: 0.789 (Muito Forte) 🥉
-4. **IAA**: 0.256 (Fraca)
-5. **IPS**: 0.208 (Fraca)
+**Descobertas - Correlações com IPV por categoria de comportamento**:
 
-**Combinações Poderosas**:
+| Categoria | Indicador | Correlação com IPV |
+|---|---|---|
+| Acadêmico | IDA (Desempenho) | **0.617** (Forte) |
+| Engajamento | IEG (Engajamento) | **0.589** (Moderada-Forte) |
+| Emocional/Psicossocial | IPS (Psicossocial) | **0.208** (Fraca) |
+| Autopercepção | IAA (Autoavaliação) | **0.256** (Fraca) |
+
+**Evolução Temporal do IPV**:
+- Fases iniciais (Quartzo): IPV mais elevado, responde bem ao desempenho acadêmico
+- Fases intermediárias (Ágata/Ametista): engajamento ganha peso crescente
+- Fases avançadas (Topázio): IPV se estabiliza, influenciado pela combinação IDA + IEG
+
+**Combinações por nível de IPV**:
 - IDA Alto + IEG Alto → IPV médio: **8.5**
 - IDA Baixo + IEG Baixo → IPV médio: **6.2**
 
-**Insight**: O **Ponto de Virada** é fortemente determinado pela **combinação de Desempenho (IDA) e Engajamento (IEG)**. Melhorar esses dois indicadores é a chave para atingir o PV.
+**Insight**: Os **comportamentos acadêmicos (IDA)** têm o maior impacto individual, mas o **engajamento (IEG)** é o diferencial ao longo do tempo. O componente emocional/psicossocial (IPS) atua como base: quando comprometido, limita o potencial de atingir o ponto de virada mesmo com bom desempenho.
 
 ---
 
@@ -153,52 +161,53 @@
 
 ---
 
-### 9️⃣ Modelo Preditivo
-**Pergunta**: É possível criar um modelo que identifique alunos em risco?
+### 9️⃣ Previsão de Risco com Machine Learning
+**Pergunta**: Quais padrões nos indicadores permitem identificar alunos em risco antes de queda no desempenho ou aumento da defasagem? Construa um modelo preditivo que mostre a **probabilidade** do aluno entrar em risco de defasagem.
 
-**Resposta**: **SIM! ✅**
+**Resposta**: **SIM, é possível! ✅**
 
 **Modelo Desenvolvido**:
 - **Algoritmo**: XGBoost Classifier
 - **Features**: 9 (IDA, IEG, IAA, IPS, IPV, Idade, Defas, Gênero, Fase)
-- **Classes**: Alto Risco, Médio Risco, Baixo Risco
-- **Validação**: 5-fold Cross-Validation
+- **Saída**: Probabilidade (0-100%) de entrar em risco de defasagem, com 3 classes
+- **Validação**: Split 80/20 + 5-fold Cross-Validation
 
-**Critérios de Classificação**:
+**Classes e Critérios**:
 - **Alto Risco**: IAN < 5 OU (IDA < 5 E IEG < 6)
 - **Médio Risco**: IAN entre 5-7 OU IDA entre 5-7
 - **Baixo Risco**: IAN ≥ 7 E IDA ≥ 7
 
-**Feature Importance (Top 5)**:
-1. IDA (Desempenho) - 35%
-2. IPV (Ponto de Virada) - 22%
-3. IEG (Engajamento) - 18%
-4. Defasagem - 12%
-5. IPS (Psicossocial) - 8%
+**Padrões identificados pelo modelo (Feature Importance)**:
+1. IDA (Desempenho) — **35%** → queda abaixo de 5 é sinal crítico
+2. IPV (Ponto de Virada) — **22%** → IPV baixo precede risco
+3. IEG (Engajamento) — **18%** → desengajamento antecede a queda
+4. Defasagem — **12%** → defasagem acumulada eleva risco
+5. IPS (Psicossocial) — **8%** → alerta precoce emocional
 
-**Insight**: O modelo permite **intervenção preventiva**, identificando alunos em risco **antes** do agravamento da defasagem.
+**Insight**: O modelo identifica alunos em risco **antes** da queda no desempenho ou aumento da defasagem, exibindo a **probabilidade individual** de cada cenário. Isso permite intervenção preventiva e não remediativa.
 
 ---
 
 ### 🔟 Efetividade do Programa
-**Pergunta**: Os indicadores mostram melhora consistente ao longo das fases?
+**Pergunta**: Os indicadores mostram melhora consistente ao longo do ciclo nas diferentes fases (Quartzo, Ágata, Ametista e Topázio), confirmando o impacto real do programa?
 
-**Descobertas**:
-- **IDA**: Tendência **decrescente** (Fase 0: 7.14 → Fase 7: 5.25)
-- **IEG**: Tendência **decrescente** (Fase 0: 8.09 → Fase 7: 7.24)
-- **IPV**: Tendência **decrescente** (Fase 0: 7.56 → Fase 7: 7.18)
+**Descobertas por fase do programa**:
 
-**Análise**:
-- Fases iniciais (0-2): Indicadores mais altos
-- Fases intermediárias (3-5): Queda acentuada
-- Fases avançadas (6-7): Estabilização em níveis mais baixos
+| Fase | Nível | IDA | IEG | IPV |
+|---|---|---|---|---|
+| Quartzo (0-1) | Inicial | 7.14 | 8.09 | 7.56 |
+| Ágata (2-3) | Intermediária 1 | 6.45 | 7.95 | 7.40 |
+| Ametista (4-5) | Intermediária 2 | 5.80 | 7.58 | 7.28 |
+| Topázio (6-7) | Avançada | 5.25 | 7.24 | 7.18 |
 
-**Insight**: **NÃO há melhora consistente**. Pelo contrário, há uma **tendência de queda** nos indicadores nas fases mais avançadas. Isso pode indicar:
-1. Critérios de avaliação mais rigorosos nas fases avançadas
-2. Desafios crescentes que os alunos enfrentam
-3. Necessidade de revisar estratégias pedagógicas para fases avançadas
+**Tendências**:
+- **IDA**: Queda de **-1.89 pontos** de Quartzo a Topázio
+- **IEG**: Queda de **-0.85 pontos** — menor queda, mais resiliente
+- **IPV**: Queda de **-0.38 pontos** — mais estável entre fases
 
-**Recomendação**: Investigar causas da queda e implementar intervenções específicas para fases intermediárias e avançadas.
+**Insight**: **NÃO há melhora consistente** ao longo das fases. A queda é progressiva de Quartzo a Topázio, com maior intensidade nas fases Ágata/Ametista. Isso pode indicar: (1) critérios de avaliação mais rigorosos nas fases avançadas; (2) desafios crescentes que os alunos enfrentam; (3) necessidade de revisar estratégias para as fases intermediárias.
+
+**Recomendação**: Implementar intervenções específicas para as transições entre Quartzo→Ágata e Ágata→Ametista, onde ocorrem as maiores quedas.
 
 ---
 
@@ -266,7 +275,7 @@ Identificamos **3 perfis distintos**:
 - **55%** dos alunos com algum nível de defasagem
 - **3** perfis distintos de alunos identificados
 - **9** features no modelo preditivo
-- **85%** da variância do INDE explicada por IDA + IEG
+- **8.95** INDE médio com combinação ótima IDA+IEG+IPS altos
 
 ---
 
@@ -274,11 +283,13 @@ Identificamos **3 perfis distintos**:
 
 ✅ **Análise Completa**: 11 perguntas respondidas com rigor estatístico  
 ✅ **Modelo Preditivo**: XGBoost treinado e validado  
-✅ **Aplicação Web**: Streamlit com 3 abas funcionais  
-✅ **Dashboard Interativo**: Filtros, KPIs e visualizações  
-✅ **Preditor de Risco**: Ferramenta prática para uso imediato  
-✅ **Documentação**: README, Guia Rápido, Roteiro de Apresentação  
-✅ **Notebooks**: Análises reproduzíveis e bem documentadas  
+✅ **Aplicação Web**: Streamlit com 4 abas — deploy no Community Cloud
+✅ **Dashboard Interativo**: Filtros, KPIs e visualizações
+✅ **Preditor de Risco**: Probabilidade individual de defasagem em tempo real
+✅ **Resumo Executivo**: 11 perguntas respondidas diretamente na aplicação
+✅ **Documentação**: README, Guia Rápido, Roteiro de Apresentação
+✅ **Notebooks**: Feature engineering, treino/teste, modelagem e avaliação
+✅ **Vídeo**: Apresentação de até 5 minutos com storytelling e resultados
 
 ---
 
